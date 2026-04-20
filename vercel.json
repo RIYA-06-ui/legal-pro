@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/dist",
+  "env": {
+    "VITE_API_BASE_URL": "https://your-backend-url.com/api"
+  }
+}
