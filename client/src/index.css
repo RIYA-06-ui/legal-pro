@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for landing page effects */
+:root{
+	--glass-bg: rgba(255,255,255,0.06);
+	--glass-border: rgba(255,255,255,0.08);
+}
+
+/* Glassy navbar / panels */
+.glass {
+	background: var(--glass-bg);
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	border: 1px solid var(--glass-border);
+}
+
+/* Mirror/reflection used under hero */
+.hero-mirror {
+	transform: scaleY(-1);
+	opacity: 0.12;
+	filter: blur(6px) saturate(120%);
+	pointer-events: none;
+}
+
+/* Floating blob */
+.blob {
+	position: absolute;
+	filter: blur(48px);
+	opacity: 0.7;
+	transform: translate3d(0,0,0);
+}
+
+/* Subtle animations */
+@keyframes floaty {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(-8px); }
+	100% { transform: translateY(0px); }
+}
+.animate-float { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 700ms ease forwards; }
+
+/* Soft glass shadow for cards */
+.soft-card { box-shadow: 0 8px 30px rgba(2,6,23,0.12); }
+
+/* Blob animations for hero section */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
